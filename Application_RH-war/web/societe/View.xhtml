@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewSocieteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewSocieteLabel_nom}"/>
+                    <h:outputText value="#{societeController.selected.nom}" title="#{bundle.ViewSocieteTitle_nom}"/>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_sigle}"/>
+                    <h:outputText value="#{societeController.selected.sigle}" title="#{bundle.ViewSocieteTitle_sigle}"/>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_logo}"/>
+                    <h:outputText value="#{societeController.selected.logo}" title="#{bundle.ViewSocieteTitle_logo}"/>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_pays}"/>
+                    <h:outputText value="#{societeController.selected.pays}" title="#{bundle.ViewSocieteTitle_pays}"/>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_date_creation}"/>
+                    <h:outputText value="#{societeController.selected.date_creation}" title="#{bundle.ViewSocieteTitle_date_creation}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_siege}"/>
+                    <h:outputText value="#{societeController.selected.siege}" title="#{bundle.ViewSocieteTitle_siege}"/>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_confirmation}"/>
+                    <h:outputText value="#{societeController.selected.confirmation}" title="#{bundle.ViewSocieteTitle_confirmation}"/>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_email}"/>
+                    <h:outputText value="#{societeController.selected.email}" title="#{bundle.ViewSocieteTitle_email}"/>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_nom_gerant}"/>
+                    <h:outputText value="#{societeController.selected.nom_gerant}" title="#{bundle.ViewSocieteTitle_nom_gerant}"/>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_prenom_gerant}"/>
+                    <h:outputText value="#{societeController.selected.prenom_gerant}" title="#{bundle.ViewSocieteTitle_prenom_gerant}"/>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_coordonnee_gerant}"/>
+                    <h:outputText value="#{societeController.selected.coordonnee_gerant}" title="#{bundle.ViewSocieteTitle_coordonnee_gerant}"/>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_service}"/>
+                    <h:outputText value="#{societeController.selected.service}" title="#{bundle.ViewSocieteTitle_service}"/>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_sous_service}"/>
+                    <h:outputText value="#{societeController.selected.sous_service}" title="#{bundle.ViewSocieteTitle_sous_service}"/>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_ville}"/>
+                    <h:outputText value="#{societeController.selected.ville}" title="#{bundle.ViewSocieteTitle_ville}"/>
+                    <h:outputText value="#{bundle.ViewSocieteLabel_id}"/>
+                    <h:outputText value="#{societeController.selected.id}" title="#{bundle.ViewSocieteTitle_id}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{societeController.destroyAndView}" value="#{bundle.ViewSocieteDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewSocieteEditLink}"/>
+                <br />
+                <h:commandLink action="#{societeController.prepareCreate}" value="#{bundle.ViewSocieteCreateLink}" />
+                <br />
+                <h:commandLink action="#{societeController.prepareList}" value="#{bundle.ViewSocieteShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewSocieteIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

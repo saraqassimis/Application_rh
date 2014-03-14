@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template_rh.xhtml">
+          <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+          
+       
+            
+             <br/> 
+            <h:form>
+                <fieldset>
+                    <legend> Création Société : </legend>
+              
+                   <div id="rootwizard">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="container">
+                                <ul>
+                                    <li><a href="#tab1" data-toggle="tab">Société</a></li>
+                                    <li><a href="#tab2" data-toggle="tab">Locaux</a></li>
+                                    <li><a href="#tab3" data-toggle="tab">Gérant</a></li>
+                                    <li><a href="#tab4" data-toggle="tab">Service</a></li>
+                                    
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bar" class="progress progress-striped active">
+                        <div class="bar"></div>
+                    </div>
+                    <div class="tab-content">
+                         
+                        <div class="tab-pane" id="tab1">
+                                   
+                             
+   
+        
+            <div class="control-group ">
+                                    <label class="control-label">Nom de la société <span class="required">*</span></label>
+                                    <div class="controls">
+                                        <h:inputText id="nom" value="#{societeController.selected.nom}" title="nom" class="span4" autocomplete="false"/>
+                                    </div>
+                                </div>
+                                <div class="control-group ">
+                                    <label class="control-label">Sigle <span class="required">*</span></label>
+                                    <div class="controls">
+                                        <h:inputText id="sigle" value="#{societeController.selected.sigle}" title="sigle}" class="span4" autocomplete="false"/>
+                                    </div>
+                                </div>
+                                  <div class="control-group ">
+                                    <label class="control-label">Logo <span class="required">*</span></label>
+                                    <div class="controls">
+                                       
+                                            <span >
+        <i class="glyphicon glyphicon-plus"></i>
+        
+        <!-- The file input field used as target for the file upload widget -->
+        <input id="fileupload" type="file" name="files[]" multiple="true"/>
+    </span>
+   
+    
+    <!-- The container for the uploaded files -->
+    <div id="files" class="files"></div>
+                                    </div>
+                                </div>
+			<div  class="control-group ">
+                             <label for="dtp_input2" class="control-label">Date de créartion <span class="required">*</span></label>
+                             <div class="control-group ">
+                <div class="input-group date form_date col-md-5 " data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" readonly="true" />
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove" /></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+				<input type="hidden" id="dtp_input2" value="" /><br/>
+            </div></div>
+			
+        
+                </div>
+                        <div class="tab-pane" id="tab2">
+                          <div class="control-group ">
+                                    <label class="control-label">Siege <span class="required">*</span></label>
+                                    <div class="controls">
+                                      <select id="siege" value="#{societeController.selected.siege}" title="#{bundle.CreateSocieteTitle_siege}"  class="span5">
+                                            <option value="">-- Select --</option>
+                                            <option value="Marrakech">
+                                                Marrakech
+                                            </option>
+                                            <option value="Casa">
+                                                Casa
+                                            </option>
+                                            <option value="Rabat">
+                                                Rabat
+                                            </option>
+                                         
+                                        </select>
+                                    </div>
+                                </div>
+                            <div class="control-group ">
+                                    <label class="control-label">Pays <span class="required">*</span></label>
+                                    <div class="controls">
+                                        <select id="pays" value="#{societeController.selected.pays}" title="pays"  class="span5">
+                                            <option value="">-- Select --</option>
+                                            <option value="Maroc">
+                                                Maroc
+                                            </option>
+                                            <option value="France">
+                                                France
+                                            </option>
+                                            <option value="Espagne">
+                                                Espagne
+                                            </option>
+                                         
+                                        </select>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="tab-pane" id="tab3">
+                           <div class="control-group ">
+                                    <label class="control-label">Nom <span class="required">*</span></label>
+                                    <div class="controls">
+                                        <h:inputText id="nom_gerant" value="#{societeController.selected.nom_gerant}" title="nom_gerant" class="span4" autocomplete="false"/>
+                                    </div>
+                                </div>
+                            <div class="control-group ">
+                                    <label class="control-label">Prenom <span class="required">*</span></label>
+                                    <div class="controls">
+                                        <h:inputText id="prenom_gerant" value="#{societeController.selected.prenom_gerant}" title="prenom_gerant" class="span4" autocomplete="false"/>
+                                    </div>
+                                </div>
+                            <div class="control-group ">
+                                    <label class="control-label">Email <span class="required">*</span></label>
+                                    <div class="controls">
+                                        <h:inputText id="email" value="#{societeController.selected.email}" title="email" class="span4" autocomplete="false"/>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="tab-pane" id="tab4">
+                           <div class="control-group ">
+                                    <label class="control-label">Service <span class="required">*</span></label>
+                                    <div class="controls">
+                                        <h:inputText id="service" value="#{societeController.selected.service}" title="service" class="span4" autocomplete="false"/>
+                                    </div>
+                                </div>
+                            <div class="control-group ">
+                                    <label class="control-label">Sous service <span class="required">*</span></label>
+                                    <div class="controls">
+                                        <h:inputText id="sous_service" value="#{societeController.selected.sous_service}" title="pays" class="span4" autocomplete="false"/>
+                                    </div>
+                                </div>
+                        </div>
+                        
+                        
+                        <ul class="pager wizard">
+                            <li class="previous first" style="display:none;"><a href="#">First</a></li>
+                            <li class="previous"><a href="#">Previous</a></li>
+                            <li class="next last" style="display:none;"><a href="#">Last</a></li>
+                            <li class="next"><a href="#">Next</a></li>
+                        </ul>
+                            
+                    </div>
+                    
+                </div>
+                    </fieldset>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">Default Title</ui:insert></title>
+        <title><ui:insert name="title">Default Title</ui:insert></title>
+       <h:outputStylesheet   name="lib/bootstrap/css/bootstrap.css"/>
+        <h:outputStylesheet   name="stylesheets/theme.css"/>
+        <h:outputStylesheet   name="lib/font-awesome/css/font-awesome.css"/>
+        <h:outputScript  name="lib/jquery-1.10.2.min.js" />
+        <h:outputStylesheet   name="lib/bootstrap/css/bootstrap-datetimepicker.min.css"/>
+        <h:outputScript   name="lib/jquery.bootstrap.wizard.js" />
+        <h:outputScript   name="lib/js/prettify.js" />
+        <h:outputScript   name="lib/js/formulaire.js" />
+        <h:outputScript   name="lib/bootstrap/js/bootstrap.min.js" />
+        <h:outputScript   name="lib/bootstrap/js/bootstrap-datetimepicker.js" />
+        <h:outputScript   name="lib/bootstrap/js/bootstrap-datetimepicker.fr.js" />
+        <h:outputStylesheet name="css/jquery.jOrgChart.css"/>
+        <h:outputStylesheet name="css/custom.css"/>
+        <h:outputStylesheet name="css/prettify.css" />
+         <script type="text/javascript" src="#{request.contextPath}/resources/lib/js/prettify_1.js"></script>
+        
+        <script src="#{request.contextPath}/resources/lib/js/jquery.jOrgChart.js"></script>
+
+        <style type="text/css">
+            #line-chart {
+                height:300px;
+                width:800px;
+                margin: 0px auto;
+                margin-top: 1em;
+            }
+            .brand { font-family: georgia, serif; }
+            .brand .first {
+                color: #ccc;
+                font-style: italic;
+            }
+            .brand .second {
+                color: #fff;
+                font-weight: bold;
+            }
+        </style>
+        <script>
+       function remplir(valeur,niv){
+            document.getElementById(niv).value =document.getElementById(valeur).textContent
+                }
+                
+      function Ajouter(form) {
+		var o=new Option(form.inp.value,form.valeur.value);
+		form.liste.options[form.liste.options.length]=o;
+	}    
+         jQuery(document).ready(function(){
+                $("#org").jOrgChart({
+                    chartElement : '#chart'   
+                });
+                
+            
+                
+                //document.getElementById("inp").value =document.getElementById("1").textContent
+                //document.getElementById("inpp").value=document.getElementById("2").textContent
+                //document.getElementById("inppp").value=document.getElementById("3").textContent
+   
+                /* Extra Code */
+                
+               
+            });
+        </script>
+        
+        <!-- Le fav and touch icons -->
+        <link rel="shortcut icon" href="#{request.contextPath}/assets/ico/favicon.ico"/>
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="#{request.contextPath}/assets/ico/apple-touch-icon-144-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="#{request.contextPath}/assets/ico/apple-touch-icon-114-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="#{request.contextPath}/assets/ico/apple-touch-icon-72-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" href="#{request.contextPath}/assets/ico/apple-touch-icon-57-precomposed.png"/>
+    </h:head>
+
+    <h:body>
+
+
+
+        <div class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav pull-right">
+
+                    <li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">
+                            <i class="icon-home"></i>Accueil</a></li>
+                    <li id="fat-menu" class="dropdown">
+                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-user"></i> Utilisateur
+                            <i class="icon-caret-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="#">Profil</a></li>
+                            <li class="divider"></li>
+                            <li><a tabindex="-1" class="visible-phone" href="#"><i class="icon-home">Profil</i></a></li>
+                            <li class="divider visible-phone"></li>
+                            <li><a tabindex="-1" href="#">Se décnnecter</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <a class="brand" href="#"><span class="first" style="width: 45px">e-</span> <span class="second">GRH</span></a>
+            </div>
+        </div>
+
+        <div class="sidebar-nav">
+            <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse">Accueil <i class="icon-chevron-up"></i></a>
+            <ul id="error-menu" class="nav nav-list collapse">
+                <li ><a href="fff.html">Connexion RH</a></li>
+                <li ><a href="404.html">Consultation des formation</a></li>
+              
+            </ul>
+            <a href="#help" class="nav-header collapsed" data-toggle="collapse">Administration <i class="icon-chevron-up"></i></a>
+            <ul id="error-menu" class="nav nav-list collapse">
+                <li ><a href="405.html">Gestion des employés</a></li>
+                <li ><a href="406.html">Gestion des utilisateurs</a></li>
+            </ul>
+           <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse">Formations<i class="icon-chevron-up"></i></a>
+            <ul id="error-menu" class="nav nav-list collapse">
+                <li ><a href="403.html">Catalogue de formation</a></li>
+                <li ><a href="404.html">Plan de formation</a></li>
+            </ul>
+           <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse">Carrières/Compétences<i class="icon-chevron-up"></i></a>
+            <ul id="error-menu" class="nav nav-list collapse">
+                <li ><a href="403.html">Gestion des compétences</a></li>
+                <li ><a href="404.html">Gestion des postes</a></li>
+                <li ><a href="404.html">Gestion des évaluations</a></li>
+                <li ><a href="404.html">Gestion des métiers</a></li>
+            </ul>
+
+            
+        </div>
+        
+        
+        
+        
+        
+
+        <div class="content">
+
+            
+
+            
+
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <p>
+                        <ui:insert name="body">Default Body</ui:insert>
+                    </p>
+                    
+                    
+                </div>
+            </div>
+            <footer class="footer">
+            <div id="footer-bottom">
+                &copy; MIT 2014. Powered by <b><a href="http://mit.co.ma" target="_blank" style="color: #0088CC; font-size: 13pt;">MIT</a></b> | Multi Information Technology
+            </div>
+        </footer>
+        </div>
+<script type="text/javascript">
+       
+            $('.form_date').datetimepicker({
+                language:  'fr',
+                weekStart: 1,
+                todayBtn:  1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 2,
+                minView: 2,
+                forceParse: 0
+            });
+           
+        </script>
+       
+    </h:body>
+
+</html>

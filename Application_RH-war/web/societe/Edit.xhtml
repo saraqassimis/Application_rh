@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditSocieteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_nom}" for="nom" />
+                    <h:inputText id="nom" value="#{societeController.selected.nom}" title="#{bundle.EditSocieteTitle_nom}" />
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_sigle}" for="sigle" />
+                    <h:inputText id="sigle" value="#{societeController.selected.sigle}" title="#{bundle.EditSocieteTitle_sigle}" />
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_logo}" for="logo" />
+                    <h:inputText id="logo" value="#{societeController.selected.logo}" title="#{bundle.EditSocieteTitle_logo}" />
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_pays}" for="pays" />
+                    <h:inputText id="pays" value="#{societeController.selected.pays}" title="#{bundle.EditSocieteTitle_pays}" />
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_date_creation}" for="date_creation" />
+                    <h:inputText id="date_creation" value="#{societeController.selected.date_creation}" title="#{bundle.EditSocieteTitle_date_creation}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_siege}" for="siege" />
+                    <h:inputText id="siege" value="#{societeController.selected.siege}" title="#{bundle.EditSocieteTitle_siege}" />
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_confirmation}" for="confirmation" />
+                    <h:inputText id="confirmation" value="#{societeController.selected.confirmation}" title="#{bundle.EditSocieteTitle_confirmation}" />
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{societeController.selected.email}" title="#{bundle.EditSocieteTitle_email}" />
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_nom_gerant}" for="nom_gerant" />
+                    <h:inputText id="nom_gerant" value="#{societeController.selected.nom_gerant}" title="#{bundle.EditSocieteTitle_nom_gerant}" />
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_prenom_gerant}" for="prenom_gerant" />
+                    <h:inputText id="prenom_gerant" value="#{societeController.selected.prenom_gerant}" title="#{bundle.EditSocieteTitle_prenom_gerant}" />
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_coordonnee_gerant}" for="coordonnee_gerant" />
+                    <h:inputText id="coordonnee_gerant" value="#{societeController.selected.coordonnee_gerant}" title="#{bundle.EditSocieteTitle_coordonnee_gerant}" />
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_service}" for="service" />
+                    <h:inputText id="service" value="#{societeController.selected.service}" title="#{bundle.EditSocieteTitle_service}" />
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_sous_service}" for="sous_service" />
+                    <h:inputText id="sous_service" value="#{societeController.selected.sous_service}" title="#{bundle.EditSocieteTitle_sous_service}" />
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_ville}" for="ville" />
+                    <h:inputText id="ville" value="#{societeController.selected.ville}" title="#{bundle.EditSocieteTitle_ville}" />
+                    <h:outputLabel value="#{bundle.EditSocieteLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{societeController.selected.id}" title="#{bundle.EditSocieteTitle_id}" />
+                </h:panelGrid>
+                <h:commandLink action="#{societeController.update}" value="#{bundle.EditSocieteSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditSocieteViewLink}"/>
+                <br />
+                <h:commandLink action="#{societeController.prepareList}" value="#{bundle.EditSocieteShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditSocieteIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
